@@ -17,7 +17,6 @@ def is_connected(job: str, qual: str):
 
 data = pd.read_csv("works.csv").dropna()
 non_specialized = list(filter(lambda x: not is_connected(x[0], x[1]), zip(data["jobTitle"], data["qualification"])))
-specialized = list(filter(lambda x: is_connected(x[0], x[1]), zip(data["jobTitle"], data["qualification"])))
 
 print(f"На {len(data)} людей, не по должности работают {len(non_specialized)}")
 print(
